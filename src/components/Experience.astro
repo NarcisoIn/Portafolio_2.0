@@ -1,0 +1,35 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+const EXPERIENCE = [
+        {
+        date: 'Mayo 2026 - Actualidad',
+        title: 'Cisco Networking Academy — Redes y Ciberseguridad',
+        description: 'Cursando en paralelo las trayectorias de Técnico en Redes y Analista Junior en Ciberseguridad. Cursos completados: Conceptos Básicos de Redes e Introducción a Ciberseguridad, ambos certificados.',
+    },
+    {
+        date: 'Agosto 2023 - Actualidad',
+        title: 'Estudiante de Ingeniería en Sistemas Computacionales',
+        description: 'Estudiante de 7mo semestre del Instituto Tecnológico de Pinotepa. Formación en redes, bases de datos, desarrollo de software y administración de sistemas. Enfocado en Linux, ciberseguridad y desarrollo con Python.',
+    },
+    {
+        date: 'Diciembre 2025',
+        title: 'Automatización de inventario (Python) — Super Arrmar',
+        description: 'Desarrollé un script en Python para una tienda local que monitorea el inventario y alerta cuando el stock está bajo. Se conecta a MySQL, genera reportes automáticos en Excel y envía notificaciones por Telegram. Primer proyecto aplicado a un caso real fuera del aula.',
+        link: 'https://github.com/NarcisoIn/Automatizacion-Stock',
+    }
+]
+---
+
+<ol class="relative border-s border-default ml-4">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }                
+    <li class="mb-10 ms-4">
+        
+    </li>
+</ol>
+

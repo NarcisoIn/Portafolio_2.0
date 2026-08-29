@@ -1,0 +1,330 @@
+---
+    import Linux from "./icons/Linux.astro"
+    import Docker from "./icons/Docker.astro"
+    import RaspberryPi from "./icons/RaspberryPi.astro"
+    import Tailscale from "./icons/Tailscale.astro"
+    import Nextcloud from "./icons/Nextcloud.astro"
+    import Telegram from "./icons/Telegram.astro"
+    import PiHole from "./icons/Pi-Hole.astro"
+    import n8n from "./icons/n8n.astro"
+    import Python from "./icons/Python.astro"
+    import Flutter from "./icons/Flutter.astro"
+    import Firebase from "./icons/Firebase.astro"
+    import NodeJS from "./icons/NodeJS.astro"
+    import Dart from "./icons/Dart.astro"
+    import MySQL from "./icons/MySQL.astro"
+    import Excel from "./icons/Excel.astro"
+    import VLAN from "./icons/VLAN.astro"
+    import VLSM from "./icons/VLSM.astro"
+    import Tkinter from "./icons/Tkinter.astro"
+    import Numpy from "./icons/Numpy.astro"
+    import Matplotlib from "./icons/Matplotlib.astro"
+    import Yfinance from "./icons/Yfinance.astro"
+    import Cisco from "./icons/Cisco.astro"
+
+const TAGS = {
+    LINUX: {
+        name: 'Linux',
+        class: 'bg-[#3a3a3a] text-white hover:scale-105 transition', // gris carbón, Tux (amarillo/blanco) resalta
+        icon: Linux,
+    },
+    DOCKER: {
+        name: 'Docker',
+        class: 'bg-[#003159] text-white hover:scale-105 transition', // el tuyo, perfecto
+        icon: Docker,
+    },
+    RASPBERRY_PI: {
+        name: 'Raspberry Pi',
+        class: 'bg-[#46091F] text-white hover:scale-105 transition', // frambuesa oscuro (marca #C51A4A)
+        icon: RaspberryPi,
+    },
+    PIHOLE: {
+        name: 'Pi-hole',
+        class: 'bg-[#350808] text-white hover:scale-105 transition', // rojo casi negro
+        icon: PiHole,
+    },
+    TAILSCALE: {
+    name: 'Tailscale',
+    class: 'bg-[#243C5A] text-white hover:scale-105 transition',
+    icon: Tailscale,
+    },
+    NEXTCLOUD: {
+        name: 'Nextcloud',
+        class: 'bg-[#00344F] text-white hover:scale-105 transition', // azul oscuro (marca #0082C9)
+        icon: Nextcloud,
+    },
+    TELEGRAM: {
+        name: 'Telegram',
+        class: 'bg-[#0D3A52] text-white hover:scale-105 transition', // azul cielo oscuro (marca #26A5E4)
+        icon: Telegram,
+    },
+    N8N: {
+        name: 'n8n',
+        class: 'bg-[#471423] text-white hover:scale-105 transition', // vino (marca #EA4B71)
+        icon: n8n,
+    },
+    PYTHON: {
+        name: 'Python',
+        class: 'bg-[#14385C] text-white hover:scale-105 transition', // azul Python oscuro (#3776AB)
+        icon: Python,
+    },
+    FLUTTER: {
+        name: 'Flutter',
+        class: 'bg-[#032E5B] text-white hover:scale-105 transition', // azul Flutter oscuro (#02569B)
+        icon: Flutter,
+    },
+    FIREBASE: {
+        name: 'Firebase',
+        class: 'bg-[#3F2A00] text-white hover:scale-105 transition', // ámbar oscuro (marca #FFCA28)
+        icon: Firebase,
+    },
+    DART: {
+        name: 'Dart',
+        class: 'bg-[#003C4A] text-white hover:scale-105 transition', // teal oscuro (marca #00C4B3)
+        icon: Dart,
+    },
+    NODEJS: {
+        name: 'Node.js',
+        class: 'bg-[#11301C] text-white hover:scale-105 transition', // verde bosque (marca #339933)
+        icon: NodeJS,
+    },
+    MYSQL: {
+        name: 'MySQL',
+        class: 'bg-[#003A47] text-white hover:scale-105 transition', // teal MySQL oscuro (#00758F)
+        icon: MySQL,
+    },
+    EXCEL: {
+        name: 'Excel',
+        class: 'bg-[#0C3A22] text-white hover:scale-105 transition', // verde Excel oscuro (#217346)
+        icon: Excel,
+    },
+    VLAN: {
+        name: 'VLAN',
+        class: 'bg-[#1E293B] text-white hover:scale-105 transition', // slate neutro, los 3 nodos de color resaltan
+        icon: VLAN,
+    },
+    VLSM: {
+        name: 'VLSM',
+        class: 'bg-[#102A43] text-white hover:scale-105 transition', // azul grisáceo, combina con el globo
+        icon: VLSM,
+    },
+    TKINTER: {
+        name: 'Tkinter',
+        class: 'bg-[#233142] text-white hover:scale-105 transition', // azul pizarra neutro
+        icon: Tkinter,
+    },
+    NUMPY: {
+        name: 'NumPy',
+        class: 'bg-[#13294B] text-white hover:scale-105 transition', // navy (marca #4D77CF)
+        icon: Numpy,
+    },
+    MATPLOTLIB: {
+        name: 'Matplotlib',
+        class: 'bg-[#262626] text-white hover:scale-105 transition', // neutro oscuro, las cuñas de colores brillan
+        icon: Matplotlib,
+    },
+    YFINANCE: {
+        name: 'yfinance',
+        class: 'bg-[#2E1065] text-white hover:scale-105 transition', // morado profundo (barras #A855F7)
+        icon: Yfinance,
+    },
+    CISCO: {
+        name: 'Cisco',
+        class: 'bg-[#04364A] text-white hover:scale-105 transition', // azul Cisco oscuro (#049FD9)
+        icon: Cisco,
+    },
+}
+
+
+
+const PROJECTS = [
+    {
+        title: 'Pi Homelab',
+        description: 'Infraestructura self-hosted en Raspberry Pi 5 con NVMe. Docker, Pi-hole, Tailscale, n8n, Nextcloud y control de contenedores vía Telegram. Acceso remoto sin exponer puertos.',
+        link: 'https://github.com/NarcisoIn/pi-homelab',
+        images: ['/src/assets/projects/pi-hole.webp'],
+        tags: [TAGS.LINUX, TAGS.DOCKER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N],
+    },
+    {
+        title: 'AuxiDrive',
+        description: 'App móvil que conecta propietarios de vehículos con mecánicos. Chat cifrado AES-256, mapa con OpenStreetMap, gestión de solicitudes con estados, cotizaciones y calificaciones. Backend serverless con Cloud Functions.',
+        images: ['/src/assets/projects/AuxiDrive_login.webp','/src/assets/projects/AuxiDrive_singup.webp' , '/src/assets/projects/AuxiDrive_feed.webp', '/src/assets/projects/AuxiDrive_perfil.webp', '/src/assets/projects/AuxiDrive_servicios.webp', '/src/assets/projects/AuxiDrive_busqueda.webp', '/src/assets/projects/AuxiDrive_solicitud_servicio.webp'],
+        tags: [TAGS.FLUTTER, TAGS.FIREBASE, TAGS.DART, TAGS.NODEJS],
+    },
+    {
+        title: 'Automatización de Inventario — Super Arrmar, Pinotepa de Don Luis, Oax.',
+        description: 'Script en Python para monitorear el inventario de una tienda local. Genera reportes en Excel, alerta por Telegram cuando el stock está bajo y se conecta a MySQL.',
+        link: 'https://github.com/NarcisoIn/Automatizacion-Stock',
+        images: ['/src/assets/projects/Automatizacion_stock_1.webp', '/src/assets/projects/Automatizacion_stock_2.webp'],   
+        tags: [TAGS.PYTHON, TAGS.MYSQL, TAGS.TELEGRAM, TAGS.EXCEL],
+    },
+    {
+        title: 'Diseño de Red LAN — Edificio de Posgrado TecNM',
+        description: 'Expediente técnico completo: 8 VLANs, VLSM sobre 172.16.20.0/22, switch L3 con SVIs, diagrama físico/lógico, plan de 12 pruebas y acta de entrega. SLA 99.99%.',
+        link: 'https://github.com/NarcisoIn/diseno-red-lan-posgrado',
+        images: ['/src/assets/projects/Red_LAN_1.webp', '/src/assets/projects/Red_LAN_2.webp', '/src/assets/projects/Red_LAN_3.webp'],
+        tags: [TAGS.CISCO, TAGS.VLAN, TAGS.VLSM],
+    },
+    {
+        title: 'InfoStock — Consulta de divisas',
+        description: 'App de escritorio para consultar acciones y divisas en tiempo real usando yfinance. Interfaz gráfica con Tkinter, enfocada en obtener datos financieros sin web scraping.',
+        link: 'https://github.com/NarcisoIn/InfoStock',
+        images: ['/src/assets/projects/InfoStock_1.webp', '/src/assets/projects/InfoStock_2.webp'],
+        tags: [TAGS.PYTHON, TAGS.TKINTER, TAGS.YFINANCE],
+    },
+    {
+        title: 'Simulación Monte Carlo — Divisas',
+        description: 'Estimación del comportamiento de divisas mediante el método de Montecarlo. Genera distribuciones estadísticas y visualizaciones para análisis de datos financieros.',
+        link: 'https://github.com/NarcisoIn/Monte-Carlo-Stock-Price-Simulation.git',
+        images: ['/src/assets/projects/Calculo_divisas.webp'],
+        tags: [TAGS.PYTHON, TAGS.NUMPY, TAGS.MATPLOTLIB],
+    }
+]
+---
+
+{
+    PROJECTS.map(({ title, description, link, images, tags }, projectIdx) => (
+        <article class={projectIdx === PROJECTS.length - 1 ? '' : 'mb-12 pb-8 border-b border-white/10'}>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty text-gray-300">{description}</p>
+            
+            <!-- Carrusel Normal (Miniatura) -->
+            <div class="relative group mb-4">
+                {images.length > 1 && (
+                    <button onclick={`scrollCarousel('carousel-${projectIdx}', -1)`} class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-black/70 hover:bg-black text-white rounded-full p-2 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center w-10 h-10 shadow-lg">❮</button>
+                )}
+                {images.length > 1 && (
+                    <button onclick={`scrollCarousel('carousel-${projectIdx}', 1)`} class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-black/70 hover:bg-black text-white rounded-full p-2 border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center w-10 h-10 shadow-lg">❯</button>
+                )}
+
+                <div id={`carousel-${projectIdx}`} class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-lg scrollbar-none" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    {images.map((img, idx) => (
+                        <div class="snap-start shrink-0 w-full relative">
+                            <!-- Llama a la nueva función openLightbox() -->
+                            <img 
+                                class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
+                                src={img} 
+                                alt={`Captura ${idx + 1} de ${title}`}
+                                loading="lazy"
+                                onclick={`openLightbox('lightbox-${projectIdx}')`}
+                            />
+                        </div>
+                    ))}
+                </div>
+                {images.length > 1 && (
+                    <span class="text-xs text-gray-400 mt-2 block text-right font-mono">1 / {images.length} — Desliza o usa flechas</span>
+                )}
+            </div>
+
+            <!-- Modal Lightbox Fullscreen con Carrusel Integrado -->
+            <dialog 
+                id={`lightbox-${projectIdx}`} 
+                class="bg-transparent p-0 m-auto w-[100vw] h-[100vh] max-w-none max-h-none backdrop:bg-black/70 backdrop:backdrop-blur-md overflow-hidden"
+                onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
+            >
+                <!-- Botón Cerrar -->
+                <button 
+                    onclick={`closeLightbox('lightbox-${projectIdx}')`}
+                    class="fixed top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/80 text-white rounded-full p-2 z-[60] w-10 h-10 flex items-center justify-center font-bold text-xl transition shadow-lg border border-white/20"
+                >
+                    ✕
+                </button>
+
+                <!-- Flechas del Modal (Nuevas) -->
+                {images.length > 1 && (
+                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❮</button>
+                )}
+                {images.length > 1 && (
+                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', 1)`} class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-[60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❯</button>
+                )}
+                
+                <!-- Carrusel Gigante dentro del Zoom -->
+                <div 
+                    id={`lightbox-carousel-${projectIdx}`}
+                    class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full h-full items-center scrollbar-none"
+                    style="scrollbar-width: none; -ms-overflow-style: none;"
+                    onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
+                >
+                    {images.map((img, idx) => (
+                        <div 
+                            class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4 md:p-20 relative"
+                            onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
+                        >
+                            <img 
+                                class="max-w-full max-h-full object-contain rounded-xl shadow-2xl cursor-zoom-out"
+                                src={img} 
+                                alt={`Vista ampliada ${idx + 1} de ${title}`} 
+                                onclick={`closeLightbox('lightbox-${projectIdx}')`}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </dialog>
+
+            <!-- Tags -->
+            <ul class="flex gap-x-2 flex-wrap mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 ${tag.class} rounded-full text-xs py-1 px-2.5 mb-2 items-center font-medium`}>
+                            {tag.icon && <tag.icon class="size-4" />}
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+
+            <!-- Enlace al repositorio -->
+            {link && (
+                <a 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link}
+                    class="inline-flex items-center gap-x-1.5 border border-white/20 bg-white/10 hover:bg-white/20 hover:scale-105 transition font-medium rounded-lg text-sm px-4 py-2 h-9"
+                >
+                    Ver repositorio...
+                </a>
+            )}
+        </article>
+    ))
+}
+
+<script is:inline>
+  // Función para abrir el modal y BLOQUEAR el scroll de la página principal
+  function openLightbox(modalId) {
+    const dialog = document.getElementById(modalId);
+    if (dialog) {
+        dialog.showModal();
+        document.body.style.overflow = 'hidden'; // Evita scrollear el portafolio
+    }
+  }
+
+  // Función para cerrar el modal y RESTAURAR el scroll
+  function closeLightbox(modalId) {
+    const dialog = document.getElementById(modalId);
+    if (dialog) {
+        dialog.close();
+        document.body.style.overflow = ''; // Regresa el scroll a la normalidad
+    }
+  }
+
+  // Esto asegura que si el usuario presiona "ESC" en el teclado, el scroll regrese
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('dialog').forEach(dialog => {
+        dialog.addEventListener('close', () => {
+            document.body.style.overflow = '';
+        });
+    });
+  });
+
+  // Función genérica para mover cualquier carrusel (el chico o el gigante)
+  function scrollCarousel(carouselId, direction) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    
+    const scrollAmount = container.clientWidth;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>

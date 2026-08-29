@@ -1,0 +1,105 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import GithubIcon from '../components/icons/Github.astro'
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import SocialPill from '../components/SocialPill.astro';
+import MailIcon from '../components/icons/Mail.astro'
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import BriefCase from '../components/icons/BriefCase.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro'
+import User from '../components/icons/User.astro'
+import Habilities from '../components/Habilities.astro'
+import Contacto from '../components/Contacto.astro'
+---
+
+<Layout title="Narciso Guzmán – ISC Student & Dev"
+description='Portafolio de Iván Narciso Guzmán, estudiante de Ingeniería en Sistemas Computacionales enfocado en Linux, ciberseguridad, redes y desarrollo con Python.'>
+	<main class="px-4 lg:px-5">
+		<SectionContainer class="py-44 pb-32">
+			    <img class="rounded-full size-12 mb-5"
+    			src="/src/assets/Perfil.webp"
+    			alt="narcis photo">
+			<h1 
+				class="text-white text-4xl lg:text-3xl md-4xl text-bond text-pretty flex flex-row gap-x-4 pb-6 lg:pb-10 "
+			>
+				Hola, soy Narciso<a href="https://www.linkedin.com/in/iv%C3%A1n-narciso-g-740b21293/"
+				target="_blank"
+				rel="noopener"
+				class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+			    </a>
+			</h1>
+			<h2 
+			class="text-xl lg:text:-2xl opacity-70 text-wrap "
+			>
+				Estudiante de <span class="text-blue-700/95 font-medium">Ingeniería en Sistemas en 7mo semestre.</span> Apasionado por Linux, redes, ciberseguridad, programación y automatización con IA. Buscando mi primera oportunidad profesional.
+			</h2>
+
+			<nav class="flex gap-3 mt-6 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/narciso-dev/">
+					<LinkedInIcon class="size-3 lg:size-4" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/NarcisoIn">
+					<GithubIcon class="w-5 lg:w-6 h-4 lg:h-5" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="#contacto" class="transition-all" target="_self">
+					<MailIcon class="size-5 lg:size-6" />
+					contacto@narcisoguzman.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<User class="size-7" />
+				Sobre mí
+			</h2>
+			<p class="mb-4 text-base font-normal text-body text-pretty">	
+				Soy estudiante de <span class="font-semibold">Ingeniería en Sistemas Computacionales</span> en el Instituto Tecnológico de Pinotepa, en la costa de Oaxaca. Mi camino en la tecnología empezó con la curiosidad de entender cómo funcionan las cosas por dentro, esa curiosidad terminó convertida en un homelab corriendo en una Raspberry Pi debajo de mi escritorio.</p
+			>
+			<p class="mb-4 text-base font-normal text-body text-pretty">
+				Me muevo entre Linux, redes, ciberseguridad, programación y automatización. Disfruto montar infraestructura, romperla, entender por qué falló y volverla a levantar mejor. Creo que la mejor forma de aprender es construyendo, y por eso cada proyecto que hago busca resolver un problema real, no solo cumplir con una tarea.</p
+			>
+			<p class="mb-4 text-base font-normal text-body text-pretty">
+				Ahora estoy enfocado en crecer hacia la ciberseguridad y la administración de sistemas Linux, mientras termino mi carrera y construyo las bases para mi primera oportunidad profesional. Fuera del código, toco la guitarra en una banda y sigo aprendiendo algo nuevo casi todos los días.</p
+			>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<BriefCase class="size-7" />
+				Experiencia
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<CodeIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="habilidades">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<BriefCase class="size-7" />
+				Habilidades
+			</h2>
+			<Habilities />
+		</SectionContainer>
+
+		<SectionContainer id="contacto">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-3 items-center">
+				<MailIcon class="size-7" />
+				Contacto
+			</h2>
+			<Contacto />
+		</SectionContainer>
+	</main>
+</Layout>
