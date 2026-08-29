@@ -1,182 +1,203 @@
 ---
-    import Linux from "./icons/Linux.astro"
-    import Docker from "./icons/Docker.astro"
-    import RaspberryPi from "./icons/RaspberryPi.astro"
-    import Tailscale from "./icons/Tailscale.astro"
-    import Nextcloud from "./icons/Nextcloud.astro"
-    import Telegram from "./icons/Telegram.astro"
-    import PiHole from "./icons/Pi-Hole.astro"
-    import n8n from "./icons/n8n.astro"
-    import Python from "./icons/Python.astro"
-    import Flutter from "./icons/Flutter.astro"
-    import Firebase from "./icons/Firebase.astro"
-    import NodeJS from "./icons/NodeJS.astro"
-    import Dart from "./icons/Dart.astro"
-    import MySQL from "./icons/MySQL.astro"
-    import Excel from "./icons/Excel.astro"
-    import VLAN from "./icons/VLAN.astro"
-    import VLSM from "./icons/VLSM.astro"
-    import Tkinter from "./icons/Tkinter.astro"
-    import Numpy from "./icons/Numpy.astro"
-    import Matplotlib from "./icons/Matplotlib.astro"
-    import Yfinance from "./icons/Yfinance.astro"
-    import Cisco from "./icons/Cisco.astro"
+import { Image } from 'astro:assets';
+
+// Iconos Importados
+import Linux from "./icons/Linux.astro"
+import Docker from "./icons/Docker.astro"
+import RaspberryPi from "./icons/RaspberryPi.astro"
+import Tailscale from "./icons/Tailscale.astro"
+import Nextcloud from "./icons/Nextcloud.astro"
+import Telegram from "./icons/Telegram.astro"
+import PiHole from "./icons/Pi-Hole.astro"
+import n8n from "./icons/n8n.astro"
+import Python from "./icons/Python.astro"
+import Flutter from "./icons/Flutter.astro"
+import Firebase from "./icons/Firebase.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import Dart from "./icons/Dart.astro"
+import MySQL from "./icons/MySQL.astro"
+import Excel from "./icons/Excel.astro"
+import VLAN from "./icons/VLAN.astro"
+import VLSM from "./icons/VLSM.astro"
+import Tkinter from "./icons/Tkinter.astro"
+import Numpy from "./icons/Numpy.astro"
+import Matplotlib from "./icons/Matplotlib.astro"
+import Yfinance from "./icons/Yfinance.astro"
+import Cisco from "./icons/Cisco.astro"
+
+// Imagenes Importadas (Corregidas con ../)
+import Auto_stock_1 from '../assets/projects/Automatizacion_stock_1.webp'
+import Auto_stock_2 from '../assets/projects/Automatizacion_stock_2.webp'
+import Auto_stock_3 from '../assets/projects/Automatizacion_stock_3.webp'
+import Red_LAN_1 from '../assets/projects/Red_LAN_1.webp'
+import Red_LAN_2 from '../assets/projects/Red_LAN_2.webp'
+import Red_LAN_3 from '../assets/projects/Red_LAN_3.webp'
+import InfoStock_1 from '../assets/projects/InfoStock_1.webp'
+import InfoStock_2 from '../assets/projects/InfoStock_2.webp'
+import Calculo_divisas from '../assets/projects/Calculo_divisas.webp'
+import Pi_Hole from '../assets/projects/pi-hole.webp'
+import Portainer from '../assets/projects/Portainer.webp'
+import AuxiDrive_login from '../assets/projects/AuxiDrive_login.webp'
+import AuxiDrive_singup from '../assets/projects/AuxiDrive_singup.webp'
+import AuxiDrive_feed from '../assets/projects/AuxiDrive_feed.webp'
+import AuxiDrive_perfil from '../assets/projects/AuxiDrive_perfil.webp'
+import AuxiDrive_servicios from '../assets/projects/AuxiDrive_servicios.webp'
+import AuxiDrive_busqueda from '../assets/projects/AuxiDrive_busqueda.webp'
+import AuxiDrive_solicitud_servicio from '../assets/projects/AuxiDrive_solicitud_servicio.webp'
 
 const TAGS = {
     LINUX: {
         name: 'Linux',
-        class: 'bg-[#3a3a3a] text-white hover:scale-105 transition', // gris carbón, Tux (amarillo/blanco) resalta
+        class: 'bg-[#3a3a3a] text-white hover:scale-105 transition',
         icon: Linux,
     },
     DOCKER: {
         name: 'Docker',
-        class: 'bg-[#003159] text-white hover:scale-105 transition', // el tuyo, perfecto
+        class: 'bg-[#003159] text-white hover:scale-105 transition',
         icon: Docker,
     },
     RASPBERRY_PI: {
         name: 'Raspberry Pi',
-        class: 'bg-[#46091F] text-white hover:scale-105 transition', // frambuesa oscuro (marca #C51A4A)
+        class: 'bg-[#46091F] text-white hover:scale-105 transition',
         icon: RaspberryPi,
     },
     PIHOLE: {
         name: 'Pi-hole',
-        class: 'bg-[#350808] text-white hover:scale-105 transition', // rojo casi negro
+        class: 'bg-[#350808] text-white hover:scale-105 transition',
         icon: PiHole,
     },
     TAILSCALE: {
-    name: 'Tailscale',
-    class: 'bg-[#243C5A] text-white hover:scale-105 transition',
-    icon: Tailscale,
+        name: 'Tailscale',
+        class: 'bg-[#243C5A] text-white hover:scale-105 transition',
+        icon: Tailscale,
     },
     NEXTCLOUD: {
         name: 'Nextcloud',
-        class: 'bg-[#00344F] text-white hover:scale-105 transition', // azul oscuro (marca #0082C9)
+        class: 'bg-[#00344F] text-white hover:scale-105 transition',
         icon: Nextcloud,
     },
     TELEGRAM: {
         name: 'Telegram',
-        class: 'bg-[#0D3A52] text-white hover:scale-105 transition', // azul cielo oscuro (marca #26A5E4)
+        class: 'bg-[#0D3A52] text-white hover:scale-105 transition',
         icon: Telegram,
     },
     N8N: {
         name: 'n8n',
-        class: 'bg-[#471423] text-white hover:scale-105 transition', // vino (marca #EA4B71)
+        class: 'bg-[#471423] text-white hover:scale-105 transition',
         icon: n8n,
     },
     PYTHON: {
         name: 'Python',
-        class: 'bg-[#14385C] text-white hover:scale-105 transition', // azul Python oscuro (#3776AB)
+        class: 'bg-[#14385C] text-white hover:scale-105 transition',
         icon: Python,
     },
     FLUTTER: {
         name: 'Flutter',
-        class: 'bg-[#032E5B] text-white hover:scale-105 transition', // azul Flutter oscuro (#02569B)
+        class: 'bg-[#032E5B] text-white hover:scale-105 transition',
         icon: Flutter,
     },
     FIREBASE: {
         name: 'Firebase',
-        class: 'bg-[#3F2A00] text-white hover:scale-105 transition', // ámbar oscuro (marca #FFCA28)
+        class: 'bg-[#3F2A00] text-white hover:scale-105 transition',
         icon: Firebase,
     },
     DART: {
         name: 'Dart',
-        class: 'bg-[#003C4A] text-white hover:scale-105 transition', // teal oscuro (marca #00C4B3)
+        class: 'bg-[#003C4A] text-white hover:scale-105 transition',
         icon: Dart,
     },
     NODEJS: {
         name: 'Node.js',
-        class: 'bg-[#11301C] text-white hover:scale-105 transition', // verde bosque (marca #339933)
+        class: 'bg-[#11301C] text-white hover:scale-105 transition',
         icon: NodeJS,
     },
     MYSQL: {
         name: 'MySQL',
-        class: 'bg-[#003A47] text-white hover:scale-105 transition', // teal MySQL oscuro (#00758F)
+        class: 'bg-[#003A47] text-white hover:scale-105 transition',
         icon: MySQL,
     },
     EXCEL: {
         name: 'Excel',
-        class: 'bg-[#0C3A22] text-white hover:scale-105 transition', // verde Excel oscuro (#217346)
+        class: 'bg-[#0C3A22] text-white hover:scale-105 transition',
         icon: Excel,
     },
     VLAN: {
         name: 'VLAN',
-        class: 'bg-[#1E293B] text-white hover:scale-105 transition', // slate neutro, los 3 nodos de color resaltan
+        class: 'bg-[#1E293B] text-white hover:scale-105 transition',
         icon: VLAN,
     },
     VLSM: {
         name: 'VLSM',
-        class: 'bg-[#102A43] text-white hover:scale-105 transition', // azul grisáceo, combina con el globo
+        class: 'bg-[#102A43] text-white hover:scale-105 transition',
         icon: VLSM,
     },
     TKINTER: {
         name: 'Tkinter',
-        class: 'bg-[#233142] text-white hover:scale-105 transition', // azul pizarra neutro
+        class: 'bg-[#233142] text-white hover:scale-105 transition',
         icon: Tkinter,
     },
     NUMPY: {
         name: 'NumPy',
-        class: 'bg-[#13294B] text-white hover:scale-105 transition', // navy (marca #4D77CF)
+        class: 'bg-[#13294B] text-white hover:scale-105 transition',
         icon: Numpy,
     },
     MATPLOTLIB: {
         name: 'Matplotlib',
-        class: 'bg-[#262626] text-white hover:scale-105 transition', // neutro oscuro, las cuñas de colores brillan
+        class: 'bg-[#262626] text-white hover:scale-105 transition',
         icon: Matplotlib,
     },
     YFINANCE: {
         name: 'yfinance',
-        class: 'bg-[#2E1065] text-white hover:scale-105 transition', // morado profundo (barras #A855F7)
+        class: 'bg-[#2E1065] text-white hover:scale-105 transition',
         icon: Yfinance,
     },
     CISCO: {
         name: 'Cisco',
-        class: 'bg-[#04364A] text-white hover:scale-105 transition', // azul Cisco oscuro (#049FD9)
+        class: 'bg-[#04364A] text-white hover:scale-105 transition',
         icon: Cisco,
     },
 }
-
-
 
 const PROJECTS = [
     {
         title: 'Pi Homelab',
         description: 'Infraestructura self-hosted en Raspberry Pi 5 con NVMe. Docker, Pi-hole, Tailscale, n8n, Nextcloud y control de contenedores vía Telegram. Acceso remoto sin exponer puertos.',
         link: 'https://github.com/NarcisoIn/pi-homelab',
-        images: ['/src/assets/projects/pi-hole.webp'],
+        images: [Pi_Hole, Portainer],
         tags: [TAGS.LINUX, TAGS.DOCKER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N],
     },
     {
         title: 'AuxiDrive',
         description: 'App móvil que conecta propietarios de vehículos con mecánicos. Chat cifrado AES-256, mapa con OpenStreetMap, gestión de solicitudes con estados, cotizaciones y calificaciones. Backend serverless con Cloud Functions.',
-        images: ['/src/assets/projects/AuxiDrive_login.webp','/src/assets/projects/AuxiDrive_singup.webp' , '/src/assets/projects/AuxiDrive_feed.webp', '/src/assets/projects/AuxiDrive_perfil.webp', '/src/assets/projects/AuxiDrive_servicios.webp', '/src/assets/projects/AuxiDrive_busqueda.webp', '/src/assets/projects/AuxiDrive_solicitud_servicio.webp'],
+        images: [AuxiDrive_login, AuxiDrive_singup, AuxiDrive_feed, AuxiDrive_perfil, AuxiDrive_servicios, AuxiDrive_busqueda, AuxiDrive_solicitud_servicio],
         tags: [TAGS.FLUTTER, TAGS.FIREBASE, TAGS.DART, TAGS.NODEJS],
     },
     {
         title: 'Automatización de Inventario — Super Arrmar, Pinotepa de Don Luis, Oax.',
         description: 'Script en Python para monitorear el inventario de una tienda local. Genera reportes en Excel, alerta por Telegram cuando el stock está bajo y se conecta a MySQL.',
         link: 'https://github.com/NarcisoIn/Automatizacion-Stock',
-        images: ['/src/assets/projects/Automatizacion_stock_1.webp', '/src/assets/projects/Automatizacion_stock_2.webp'],   
+        images: [Auto_stock_1, Auto_stock_2, Auto_stock_3],   
         tags: [TAGS.PYTHON, TAGS.MYSQL, TAGS.TELEGRAM, TAGS.EXCEL],
     },
     {
         title: 'Diseño de Red LAN — Edificio de Posgrado TecNM',
         description: 'Expediente técnico completo: 8 VLANs, VLSM sobre 172.16.20.0/22, switch L3 con SVIs, diagrama físico/lógico, plan de 12 pruebas y acta de entrega. SLA 99.99%.',
         link: 'https://github.com/NarcisoIn/diseno-red-lan-posgrado',
-        images: ['/src/assets/projects/Red_LAN_1.webp', '/src/assets/projects/Red_LAN_2.webp', '/src/assets/projects/Red_LAN_3.webp'],
+        images: [Red_LAN_1, Red_LAN_2, Red_LAN_3],
         tags: [TAGS.CISCO, TAGS.VLAN, TAGS.VLSM],
     },
     {
         title: 'InfoStock — Consulta de divisas',
         description: 'App de escritorio para consultar acciones y divisas en tiempo real usando yfinance. Interfaz gráfica con Tkinter, enfocada en obtener datos financieros sin web scraping.',
         link: 'https://github.com/NarcisoIn/InfoStock',
-        images: ['/src/assets/projects/InfoStock_1.webp', '/src/assets/projects/InfoStock_2.webp'],
+        images: [InfoStock_1, InfoStock_2],
         tags: [TAGS.PYTHON, TAGS.TKINTER, TAGS.YFINANCE],
     },
     {
         title: 'Simulación Monte Carlo — Divisas',
         description: 'Estimación del comportamiento de divisas mediante el método de Montecarlo. Genera distribuciones estadísticas y visualizaciones para análisis de datos financieros.',
         link: 'https://github.com/NarcisoIn/Monte-Carlo-Stock-Price-Simulation.git',
-        images: ['/src/assets/projects/Calculo_divisas.webp'],
+        images: [Calculo_divisas],
         tags: [TAGS.PYTHON, TAGS.NUMPY, TAGS.MATPLOTLIB],
     }
 ]
@@ -201,7 +222,7 @@ const PROJECTS = [
                     {images.map((img, idx) => (
                         <div class="snap-start shrink-0 w-full relative">
                             <!-- Llama a la nueva función openLightbox() -->
-                            <img 
+                            <Image 
                                 class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
                                 src={img} 
                                 alt={`Captura ${idx + 1} de ${title}`}
@@ -230,7 +251,7 @@ const PROJECTS = [
                     ✕
                 </button>
 
-                <!-- Flechas del Modal (Nuevas) -->
+                <!-- Flechas del Modal -->
                 {images.length > 1 && (
                     <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❮</button>
                 )}
@@ -250,7 +271,7 @@ const PROJECTS = [
                             class="snap-center shrink-0 w-full h-full flex items-center justify-center p-4 md:p-20 relative"
                             onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
                         >
-                            <img 
+                            <Image 
                                 class="max-w-full max-h-full object-contain rounded-xl shadow-2xl cursor-zoom-out"
                                 src={img} 
                                 alt={`Vista ampliada ${idx + 1} de ${title}`} 
@@ -289,25 +310,22 @@ const PROJECTS = [
 }
 
 <script is:inline>
-  // Función para abrir el modal y BLOQUEAR el scroll de la página principal
   function openLightbox(modalId) {
     const dialog = document.getElementById(modalId);
     if (dialog) {
         dialog.showModal();
-        document.body.style.overflow = 'hidden'; // Evita scrollear el portafolio
+        document.body.style.overflow = 'hidden'; 
     }
   }
 
-  // Función para cerrar el modal y RESTAURAR el scroll
   function closeLightbox(modalId) {
     const dialog = document.getElementById(modalId);
     if (dialog) {
         dialog.close();
-        document.body.style.overflow = ''; // Regresa el scroll a la normalidad
+        document.body.style.overflow = ''; 
     }
   }
 
-  // Esto asegura que si el usuario presiona "ESC" en el teclado, el scroll regrese
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('dialog').forEach(dialog => {
         dialog.addEventListener('close', () => {
@@ -316,7 +334,6 @@ const PROJECTS = [
     });
   });
 
-  // Función genérica para mover cualquier carrusel (el chico o el gigante)
   function scrollCarousel(carouselId, direction) {
     const container = document.getElementById(carouselId);
     if (!container) return;
