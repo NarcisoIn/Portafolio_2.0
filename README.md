@@ -1,6 +1,4 @@
-Copia el siguiente bloque y pégalo directamente en tu archivo `README.md`, reemplazando todo lo que Astro generó por defecto:
 
-```markdown
 # root.narciso - Portafolio Personal
 
 Repositorio del código fuente de mi portafolio profesional, diseñado para documentar y presentar proyectos de administración de sistemas Linux, redes y ciberseguridad.
@@ -49,8 +47,3 @@ El código fuente de este proyecto se distribuye bajo la [Licencia MIT](https://
 
 **Nota:** Los recursos gráficos, logotipos, fotografías personales y el contenido redactado (experiencia, descripciones de proyectos) tienen todos los derechos reservados y no pueden ser reutilizados para suplantación de identidad.
 
-```
-
-Solo recuerda cambiar el enlace del `git clone` por la URL real de tu repositorio. Avísame en cuanto termines el `git push` o si pasamos de lleno a configurar el despliegue en Vercel.
-
-```
