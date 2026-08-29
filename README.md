@@ -20,13 +20,13 @@ Repositorio del código fuente de mi portafolio profesional, diseñado para docu
 Para levantar el entorno de desarrollo en tu máquina local:
 
 1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/NarcisoIn/Portafolio_2.0.git
+```bash
+git clone https://github.com/NarcisoIn/Portafolio_2.0.git
 
 ```
 
 2. Instala las dependencias:
-```bash
+```bash 
 npm install
 
 ```
