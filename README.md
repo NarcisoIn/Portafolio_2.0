@@ -1,3 +1,6 @@
+Copia el siguiente bloque y pégalo directamente en tu archivo `README.md`, reemplazando todo lo que Astro generó por defecto:
+
+```markdown
 # root.narciso - Portafolio Personal
 
 Repositorio del código fuente de mi portafolio profesional, diseñado para documentar y presentar proyectos de administración de sistemas Linux, redes y ciberseguridad.
@@ -20,4 +23,34 @@ Para levantar el entorno de desarrollo en tu máquina local:
 
 1. Clona este repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
+   git clone https://github.com/NarcisoIn/Portafolio_2.0.git
+
+```
+
+2. Instala las dependencias:
+```bash
+npm install
+
+```
+
+
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+
+```
+
+
+4. Abre tu navegador en `http://localhost:4321`
+
+## Licencia
+
+El código fuente de este proyecto se distribuye bajo la [Licencia MIT](https://www.google.com/search?q=LICENSE). Eres libre de utilizar la estructura y el código para tus propios proyectos.
+
+**Nota:** Los recursos gráficos, logotipos, fotografías personales y el contenido redactado (experiencia, descripciones de proyectos) tienen todos los derechos reservados y no pueden ser reutilizados para suplantación de identidad.
+
+```
+
+Solo recuerda cambiar el enlace del `git clone` por la URL real de tu repositorio. Avísame en cuanto termines el `git push` o si pasamos de lleno a configurar el despliegue en Vercel.
+
+```
