@@ -29,40 +29,43 @@
   const btn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu-items');
 
-  // Función para abrir/cerrar el menú
-  const toggleMenu = () => {
-    menu?.classList.toggle('opacity-0');
-    menu?.classList.toggle('pointer-events-none');
-    menu?.classList.toggle('-translate-y-4');
-    menu?.classList.toggle('opacity-100');
-    menu?.classList.toggle('pointer-events-auto');
-    menu?.classList.toggle('translate-y-0');
+  // Función para cerrar el menú de golpe
+  const closeMenu = () => {
+    menu?.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+    menu?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
   };
 
-  // Clic en la hamburguesa
+  // Función para abrir el menú
+  const openMenu = () => {
+    menu?.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+    menu?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+  };
+
+  // Alternar en el botón de hamburguesa
   btn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    toggleMenu();
+    if (menu?.classList.contains('opacity-0')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
   });
 
-  // Ocultar al hacer clic en un enlace (Móvil)
+  // Ocultar inmediatamente al hacer clic en cualquier enlace
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 768 && menu?.classList.contains('opacity-100')) {
-        toggleMenu();
-      }
+      closeMenu();
     });
   });
 
-  // Ocultar al hacer clic fuera del menú
+  // Ocultar al hacer clic fuera del menú (Usando instanceof Node para TypeScript)
   document.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) {
+    if (e.target instanceof Node) {
       const isClickInsideMenu = menu?.contains(e.target);
       const isClickOnButton = btn?.contains(e.target);
 
-      // Si el clic es afuera y el menú está visible (opacidad 100)
-      if (!isClickInsideMenu && !isClickOnButton && menu?.classList.contains('opacity-100')) {
-        toggleMenu();
+      if (!isClickInsideMenu && !isClickOnButton && !menu?.classList.contains('opacity-0')) {
+        closeMenu();
       }
     }
   });

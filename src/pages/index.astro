@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
+import Logo from '../assets/Perfil.webp';
+
 import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
 import GithubIcon from '../components/icons/Github.astro'
@@ -19,9 +23,11 @@ import Contacto from '../components/Contacto.astro'
 description='Portafolio de Iván Narciso Guzmán, estudiante de Ingeniería en Sistemas Computacionales enfocado en Linux, ciberseguridad, redes y desarrollo con Python.'>
 	<main class="px-4 lg:px-5">
 		<SectionContainer class="py-44 pb-32">
-			    <img class="rounded-full size-12 mb-5"
-    			src="/src/assets/Perfil.webp"
-    			alt="narcis photo">
+			    <Image
+					class="rounded-full size-12 mb-5"
+    				src = {Logo}
+    				alt="narcis photo"
+				/>
 			<h1 
 				class="text-white text-4xl lg:text-3xl md-4xl text-bond text-pretty flex flex-row gap-x-4 pb-6 lg:pb-10 "
 			>
