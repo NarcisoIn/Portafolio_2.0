@@ -24,8 +24,19 @@ import Numpy from "./icons/Numpy.astro"
 import Matplotlib from "./icons/Matplotlib.astro"
 import Yfinance from "./icons/Yfinance.astro"
 import Cisco from "./icons/Cisco.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
 
 // Imagenes Importadas (Corregidas con ../)
+import Arrmar_1 from '../assets/projects/superArrmar_top.webp'
+import Arrmar_2 from '../assets/projects/superArrmar_nosotros.webp'
+import Arrmar_3 from '../assets/projects/superArrmar_categorias.webp'
+import Arrmar_4 from '../assets/projects/superArrmar_productos.webp'
+import Arrmar_5 from '../assets/projects/superArrmar_promociones.webp'
+import Arrmar_6 from '../assets/projects/superArrmar_ubicacion.webp'
+import Arrmar_7 from '../assets/projects/superArrmar_contacto.webp'
+import Arrmar_8 from '../assets/projects/superArrmar_footer.webp'
 import Auto_stock_1 from '../assets/projects/Automatizacion_stock_1.webp'
 import Auto_stock_2 from '../assets/projects/Automatizacion_stock_2.webp'
 import Auto_stock_3 from '../assets/projects/Automatizacion_stock_3.webp'
@@ -46,6 +57,21 @@ import AuxiDrive_busqueda from '../assets/projects/AuxiDrive_busqueda.webp'
 import AuxiDrive_solicitud_servicio from '../assets/projects/AuxiDrive_solicitud_servicio.webp'
 
 const TAGS = {
+    TAILWIND: {
+        name: 'Tailwind',
+        class: 'bg-[#0C3D4A] text-white hover:scale-105 transition',
+        icon: Tailwind,
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-[#4A1A0A] text-white hover:scale-105 transition',
+        icon: HTML,
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'bg-[#0A1A4A] text-white hover:scale-105 transition',
+        icon: CSS,
+    },
     LINUX: {
         name: 'Linux',
         class: 'bg-[#3a3a3a] text-white hover:scale-105 transition',
@@ -160,43 +186,58 @@ const TAGS = {
 
 const PROJECTS = [
     {
+        title: 'Pagina Web Informativa - Super Arrmar',
+        description: 'Sitio web moderno y responsivo desarrollado para una tienda de abarrotes local. Incluye catálogo de productos organizado por categorías, sección de promociones, galería fotográfica, ubicación interactiva y enlace directo a WhatsApp para consultas. Diseñado con un enfoque en la experiencia de usuario y optimizado para múltiples dispositivos y navegadores.',
+        link_repo: null, // No se mostrará el botón de repositorio
+        link_demo: 'https://super-arrmar.vercel.app/', 
+        images: [Arrmar_1, Arrmar_2, Arrmar_3, Arrmar_4, Arrmar_5, Arrmar_6, Arrmar_7, Arrmar_8],
+        tags: [TAGS.TAILWIND, TAGS.HTML, TAGS.CSS],
+    },
+    {
         title: 'Pi Homelab',
         description: 'Infraestructura self-hosted en Raspberry Pi 5 con NVMe. Docker, Pi-hole, Tailscale, n8n, Nextcloud y control de contenedores vía Telegram. Acceso remoto sin exponer puertos.',
-        link: 'https://github.com/NarcisoIn/pi-homelab',
+        link_repo: 'https://github.com/NarcisoIn/pi-homelab',
+        link_demo: null,
         images: [Pi_Hole, Portainer],
         tags: [TAGS.LINUX, TAGS.DOCKER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N],
     },
     {
         title: 'AuxiDrive',
         description: 'App móvil que conecta propietarios de vehículos con mecánicos. Chat cifrado AES-256, mapa con OpenStreetMap, gestión de solicitudes con estados, cotizaciones y calificaciones. Backend serverless con Cloud Functions.',
+        link_repo: null,
+        link_demo: null,
         images: [AuxiDrive_login, AuxiDrive_singup, AuxiDrive_feed, AuxiDrive_perfil, AuxiDrive_servicios, AuxiDrive_busqueda, AuxiDrive_solicitud_servicio],
         tags: [TAGS.FLUTTER, TAGS.FIREBASE, TAGS.DART, TAGS.NODEJS],
     },
     {
         title: 'Automatización de Inventario — Super Arrmar, Pinotepa de Don Luis, Oax.',
         description: 'Script en Python para monitorear el inventario de una tienda local. Genera reportes en Excel, alerta por Telegram cuando el stock está bajo y se conecta a MySQL.',
-        link: 'https://github.com/NarcisoIn/Automatizacion-Stock',
+        link_repo: 'https://github.com/NarcisoIn/Automatizacion-Stock',
+        link_demo: null,
         images: [Auto_stock_1, Auto_stock_2, Auto_stock_3],   
         tags: [TAGS.PYTHON, TAGS.MYSQL, TAGS.TELEGRAM, TAGS.EXCEL],
     },
     {
         title: 'Diseño de Red LAN — Edificio de Posgrado TecNM',
         description: 'Expediente técnico completo: 8 VLANs, VLSM sobre 172.16.20.0/22, switch L3 con SVIs, diagrama físico/lógico, plan de 12 pruebas y acta de entrega. SLA 99.99%.',
-        link: 'https://github.com/NarcisoIn/diseno-red-lan-posgrado',
+        link_repo: 'https://github.com/NarcisoIn/diseno-red-lan-posgrado',
+        link_demo: null,
         images: [Red_LAN_1, Red_LAN_2, Red_LAN_3],
         tags: [TAGS.CISCO, TAGS.VLAN, TAGS.VLSM],
     },
     {
         title: 'InfoStock — Consulta de divisas',
         description: 'App de escritorio para consultar acciones y divisas en tiempo real usando yfinance. Interfaz gráfica con Tkinter, enfocada en obtener datos financieros sin web scraping.',
-        link: 'https://github.com/NarcisoIn/InfoStock',
+        link_repo: 'https://github.com/NarcisoIn/InfoStock',
+        link_demo: null,
         images: [InfoStock_1, InfoStock_2],
         tags: [TAGS.PYTHON, TAGS.TKINTER, TAGS.YFINANCE],
     },
     {
         title: 'Simulación Monte Carlo — Divisas',
         description: 'Estimación del comportamiento de divisas mediante el método de Montecarlo. Genera distribuciones estadísticas y visualizaciones para análisis de datos financieros.',
-        link: 'https://github.com/NarcisoIn/Monte-Carlo-Stock-Price-Simulation.git',
+        link_repo: 'https://github.com/NarcisoIn/Monte-Carlo-Stock-Price-Simulation.git',
+        link_demo: null,
         images: [Calculo_divisas],
         tags: [TAGS.PYTHON, TAGS.NUMPY, TAGS.MATPLOTLIB],
     }
@@ -204,7 +245,7 @@ const PROJECTS = [
 ---
 
 {
-    PROJECTS.map(({ title, description, link, images, tags }, projectIdx) => (
+    PROJECTS.map(({ title, description, link_repo, link_demo, images, tags }, projectIdx) => (
         <article class={projectIdx === PROJECTS.length - 1 ? '' : 'mb-12 pb-8 border-b border-white/10'}>
             <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty text-gray-300">{description}</p>
@@ -221,9 +262,8 @@ const PROJECTS = [
                 <div id={`carousel-${projectIdx}`} class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-lg scrollbar-none" style="scrollbar-width: none; -ms-overflow-style: none;">
                     {images.map((img, idx) => (
                         <div class="snap-start shrink-0 w-full relative">
-                            <!-- Llama a la nueva función openLightbox() -->
                             <Image 
-                                class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
+                                class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[-500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
                                 src={img} 
                                 alt={`Captura ${idx + 1} de ${title}`}
                                 loading="lazy"
@@ -237,29 +277,26 @@ const PROJECTS = [
                 )}
             </div>
 
-            <!-- Modal Lightbox Fullscreen con Carrusel Integrado -->
+            <!-- Modal Lightbox Fullscreen -->
             <dialog 
                 id={`lightbox-${projectIdx}`} 
-                class="bg-transparent p-0 m-auto w-[100vw] h-[100vh] max-w-none max-h-none backdrop:bg-black/70 backdrop:backdrop-blur-md overflow-hidden"
+                class="bg-transparent p-0 m-auto w-[-100vw] h-[-100vh] max-w-none max-h-none backdrop:bg-black/70 backdrop:backdrop-blur-md overflow-hidden"
                 onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
             >
-                <!-- Botón Cerrar -->
                 <button 
                     onclick={`closeLightbox('lightbox-${projectIdx}')`}
-                    class="fixed top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/80 text-white rounded-full p-2 z-[60] w-10 h-10 flex items-center justify-center font-bold text-xl transition shadow-lg border border-white/20"
+                    class="fixed top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/80 text-white rounded-full p-2 z-[-60] w-10 h-10 flex items-center justify-center font-bold text-xl transition shadow-lg border border-white/20"
                 >
                     ✕
                 </button>
 
-                <!-- Flechas del Modal -->
                 {images.length > 1 && (
-                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❮</button>
+                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[-60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❮</button>
                 )}
                 {images.length > 1 && (
-                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', 1)`} class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-[60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❯</button>
+                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', 1)`} class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-[-60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❯</button>
                 )}
                 
-                <!-- Carrusel Gigante dentro del Zoom -->
                 <div 
                     id={`lightbox-carousel-${projectIdx}`}
                     class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full h-full items-center scrollbar-none"
@@ -294,17 +331,32 @@ const PROJECTS = [
                 ))}
             </ul>
 
-            <!-- Enlace al repositorio -->
-            {link && (
-                <a 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={link}
-                    class="inline-flex items-center gap-x-1.5 border border-white/20 bg-white/10 hover:bg-white/20 hover:scale-105 transition font-medium rounded-lg text-sm px-4 py-2 h-9"
-                >
-                    Ver repositorio...
-                </a>
-            )}
+            <!-- Contenedor de Botones (Condicionales con link_repo y link_demo) -->
+            <div class="flex flex-wrap gap-3 mt-4">
+                {link_repo && (
+                    <a 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={link_repo}
+                        class="inline-flex items-center gap-x-2 border border-white/20 bg-white/10 hover:bg-white/20 hover:scale-105 transition font-medium rounded-lg text-sm px-4 py-2 h-9"
+                    >
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Ver código
+                    </a>
+                )}
+                
+                {link_demo && (
+                    <a 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={link_demo}
+                        class="inline-flex items-center gap-x-2 border border-blue-400/30 bg-blue-500/10 hover:bg-blue-500/20 hover:scale-105 transition font-medium rounded-lg text-sm px-4 py-2 h-9 text-blue-300"
+                    >
+                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Ver demo
+                    </a>
+                )}
+            </div>
         </article>
     ))
 }

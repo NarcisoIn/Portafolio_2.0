@@ -1,5 +1,5 @@
 
-# root.narciso - Portafolio Personal
+# NarcisoIn - Portafolio Personal
 
 Repositorio del código fuente de mi portafolio profesional, diseñado para documentar y presentar proyectos de administración de sistemas Linux, redes y ciberseguridad.
 

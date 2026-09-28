@@ -1,7 +1,7 @@
 ---
 import '@fontsource-variable/onest/wght.css';
-import Header from "../components/Header.astro";
 import "../styles/global.css";
+import Header from "../components/Header.astro";
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -21,12 +21,17 @@ const { description, title } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="fixed inset-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header/>
-		<slot />
-		<Footer />
-	</body>
+<body>
+        <div class="fixed inset-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+        <Header/>
+        
+        <!-- Envolvemos el slot para que ocupe todo el espacio sobrante -->
+        <main class="flex-1 w-full">
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
 </html>
 
 <style is:global>
