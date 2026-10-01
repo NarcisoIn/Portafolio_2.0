@@ -1,6 +1,8 @@
 ---
 import Linux from "./icons/Linux.astro"
+import Fedora from "./icons/Fedora.astro"
 import Docker from "./icons/Docker.astro"
+import Portainer from "./icons/Portainer.astro"
 import RaspberryPi from "./icons/RaspberryPi.astro"
 import Tailscale from "./icons/Tailscale.astro"
 import Nextcloud from "./icons/Nextcloud.astro"
@@ -8,176 +10,261 @@ import Telegram from "./icons/Telegram.astro"
 import PiHole from "./icons/Pi-Hole.astro"
 import n8n from "./icons/n8n.astro"
 import Python from "./icons/Python.astro"
+import FastAPI from "./icons/FastAPI.astro"
+import Flask from "./icons/Flask.astro"
 import Flutter from "./icons/Flutter.astro"
 import Firebase from "./icons/Firebase.astro"
 import NodeJS from "./icons/NodeJS.astro"
 import Dart from "./icons/Dart.astro"
 import MySQL from "./icons/MySQL.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
 import Excel from "./icons/Excel.astro"
 import VLAN from "./icons/VLAN.astro"
 import VLSM from "./icons/VLSM.astro"
+import Cisco from "./icons/Cisco.astro"
+import Cloudflare from "./icons/Cloudflare.astro"
 import Tkinter from "./icons/Tkinter.astro"
 import Numpy from "./icons/Numpy.astro"
 import Matplotlib from "./icons/Matplotlib.astro"
 import Yfinance from "./icons/Yfinance.astro"
-import Cisco from "./icons/Cisco.astro"
 import AstroIcon from "./icons/AstroIcon.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import HTML from "./icons/HTML.astro"
 import CSS from "./icons/CSS.astro"
-import PostgreSQL from "./icons/PostgreSQL.astro"
+import Javascript from "./icons/Javascript.astro"
+import Java from "./icons/Java.astro"
+import Git from "./icons/Git.astro"
+import Bash from "./icons/Bash.astro"
+import Arduino from "./icons/Arduino.astro"
+import Ollama from "./icons/Ollama.astro"
+import Vercel from "./icons/Vercel.astro"
+import Ubuntu from "./icons/Ubuntu.astro"
+import GNS3 from "./icons/GNS3.astro"
 
 const TAGS = {
+    // --- NUEVAS TECNOLOGÍAS AGREGADAS ---
+    GNS3: {
+        name: 'GNS3',
+        class: 'bg-[#01a4ce]/20 border border-[#01a4ce]/50 text-white hover:scale-105 transition',
+        icon: GNS3,
+    },
+    UBUNTU: {
+        name: 'Ubuntu',
+        class: 'bg-[#DD4814]/20 border border-[#DD4814]/50 text-white hover:scale-105 transition',
+        icon: Ubuntu,
+    },
+    CLOUDFLARE: {
+        name: 'Cloudflare',
+        class: 'bg-[#F38020]/20 border border-[#F38020]/50 text-white hover:scale-105 transition',
+        icon: Cloudflare,
+    },
+    VERCEL: {
+        name: 'Vercel',
+        class: 'bg-black border border-white/20 text-white hover:scale-105 transition',
+        icon: Vercel,
+    },
+    OLLAMA: {
+        name: 'Ollama',
+        class: 'bg-white/10 border border-white/30 text-white hover:scale-105 transition',
+        icon: Ollama,
+    },
+    FASTAPI: {
+        name: 'FastAPI',
+        class: 'bg-[#009688]/20 border border-[#009688]/50 text-white hover:scale-105 transition',
+        icon: FastAPI,
+    },
+    FLASK: {
+        name: 'Flask',
+        class: 'bg-white/10 border border-white/30 text-white hover:scale-105 transition',
+        icon: Flask,
+    },
+    PORTAINER: {
+        name: 'Portainer',
+        class: 'bg-[#13BEF9]/20 border border-[#13BEF9]/50 text-white hover:scale-105 transition',
+        icon: Portainer,
+    },
+    FEDORA: {
+        name: 'Fedora',
+        class: 'bg-[#294172]/50 border border-[#294172]/80 text-white hover:scale-105 transition',
+        icon: Fedora,
+    },
+    ARDUINO: {
+        name: 'Arduino',
+        class: 'bg-[#00979D]/30 border border-[#00979D]/60 text-white hover:scale-105 transition',
+        icon: Arduino,
+    },
+    BASH: {
+        name: 'Bash',
+        class: 'bg-[#4EAA25]/30 border border-[#4EAA25]/60 text-white hover:scale-105 transition',
+        icon: Bash,
+    },
+
+    // --- TUS TAGS ORIGINALES INTACTOS ---
+    GIT: {
+        name: 'Git',
+        class: 'bg-gray-800 text-white hover:scale-105 transition',
+        icon: Git,  
+    },
+    JAVA: {
+        name: 'Java',
+        class: 'bg-gray-800 text-white hover:scale-105 transition',
+        icon: Java,
+    },
+    JS: {
+        name: 'Javascript',
+        class: 'bg-gray-800 text-white hover:scale-105 transition',
+        icon: Javascript,
+    },
     LINUX: {
         name: 'Linux',
-        class: 'bg-[#3a3a3a] text-white hover:scale-105 transition', // gris carbón, Tux (amarillo/blanco) resalta
+        class: 'bg-[#3a3a3a] text-white hover:scale-105 transition',
         icon: Linux,
     },
     DOCKER: {
         name: 'Docker',
-        class: 'bg-[#003159] text-white hover:scale-105 transition', // el tuyo, perfecto
+        class: 'bg-[#003159] text-white hover:scale-105 transition',
         icon: Docker,
     },
     RASPBERRY_PI: {
         name: 'Raspberry Pi',
-        class: 'bg-[#46091F] text-white hover:scale-105 transition', // frambuesa oscuro (marca #C51A4A)
+        class: 'bg-[#46091F] text-white hover:scale-105 transition',
         icon: RaspberryPi,
     },
     PIHOLE: {
         name: 'Pi-hole',
-        class: 'bg-[#350808] text-white hover:scale-105 transition', // rojo casi negro
+        class: 'bg-[#350808] text-white hover:scale-105 transition',
         icon: PiHole,
     },
     TAILSCALE: {
-    name: 'Tailscale',
-    class: 'bg-[#243C5A] text-white hover:scale-105 transition',
-    icon: Tailscale,
+        name: 'Tailscale',
+        class: 'bg-[#243C5A] text-white hover:scale-105 transition',
+        icon: Tailscale,
     },
     NEXTCLOUD: {
         name: 'Nextcloud',
-        class: 'bg-[#00344F] text-white hover:scale-105 transition', // azul oscuro (marca #0082C9)
+        class: 'bg-[#00344F] text-white hover:scale-105 transition',
         icon: Nextcloud,
     },
     TELEGRAM: {
         name: 'Telegram',
-        class: 'bg-[#0D3A52] text-white hover:scale-105 transition', // azul cielo oscuro (marca #26A5E4)
+        class: 'bg-[#0D3A52] text-white hover:scale-105 transition',
         icon: Telegram,
     },
     N8N: {
         name: 'n8n',
-        class: 'bg-[#471423] text-white hover:scale-105 transition', // vino (marca #EA4B71)
+        class: 'bg-[#471423] text-white hover:scale-105 transition',
         icon: n8n,
     },
     PYTHON: {
         name: 'Python',
-        class: 'bg-[#14385C] text-white hover:scale-105 transition', // azul Python oscuro (#3776AB)
+        class: 'bg-[#14385C] text-white hover:scale-105 transition',
         icon: Python,
     },
     FLUTTER: {
         name: 'Flutter',
-        class: 'bg-[#032E5B] text-white hover:scale-105 transition', // azul Flutter oscuro (#02569B)
+        class: 'bg-[#032E5B] text-white hover:scale-105 transition',
         icon: Flutter,
     },
     FIREBASE: {
         name: 'Firebase',
-        class: 'bg-[#3F2A00] text-white hover:scale-105 transition', // ámbar oscuro (marca #FFCA28)
+        class: 'bg-[#3F2A00] text-white hover:scale-105 transition',
         icon: Firebase,
     },
     DART: {
         name: 'Dart',
-        class: 'bg-[#003C4A] text-white hover:scale-105 transition', // teal oscuro (marca #00C4B3)
+        class: 'bg-[#003C4A] text-white hover:scale-105 transition',
         icon: Dart,
     },
     NODEJS: {
         name: 'Node.js',
-        class: 'bg-[#11301C] text-white hover:scale-105 transition', // verde bosque (marca #339933)
+        class: 'bg-[#11301C] text-white hover:scale-105 transition',
         icon: NodeJS,
     },
     MYSQL: {
         name: 'MySQL',
-        class: 'bg-[#003A47] text-white hover:scale-105 transition', // teal MySQL oscuro (#00758F)
+        class: 'bg-[#003A47] text-white hover:scale-105 transition',
         icon: MySQL,
     },
     EXCEL: {
         name: 'Excel',
-        class: 'bg-[#0C3A22] text-white hover:scale-105 transition', // verde Excel oscuro (#217346)
+        class: 'bg-[#0C3A22] text-white hover:scale-105 transition',
         icon: Excel,
     },
     VLAN: {
         name: 'VLAN',
-        class: 'bg-[#1E293B] text-white hover:scale-105 transition', // slate neutro, los 3 nodos de color resaltan
+        class: 'bg-[#1E293B] text-white hover:scale-105 transition',
         icon: VLAN,
     },
     VLSM: {
         name: 'VLSM',
-        class: 'bg-[#102A43] text-white hover:scale-105 transition', // azul grisáceo, combina con el globo
+        class: 'bg-[#102A43] text-white hover:scale-105 transition',
         icon: VLSM,
     },
     TKINTER: {
         name: 'Tkinter',
-        class: 'bg-[#233142] text-white hover:scale-105 transition', // azul pizarra neutro
+        class: 'bg-[#233142] text-white hover:scale-105 transition',
         icon: Tkinter,
     },
     NUMPY: {
         name: 'NumPy',
-        class: 'bg-[#13294B] text-white hover:scale-105 transition', // navy (marca #4D77CF)
+        class: 'bg-[#13294B] text-white hover:scale-105 transition',
         icon: Numpy,
     },
     MATPLOTLIB: {
         name: 'Matplotlib',
-        class: 'bg-[#262626] text-white hover:scale-105 transition', // neutro oscuro, las cuñas de colores brillan
+        class: 'bg-[#262626] text-white hover:scale-105 transition',
         icon: Matplotlib,
     },
     YFINANCE: {
         name: 'yfinance',
-        class: 'bg-[#2E1065] text-white hover:scale-105 transition', // morado profundo (barras #A855F7)
+        class: 'bg-[#2E1065] text-white hover:scale-105 transition',
         icon: Yfinance,
     },
     CISCO: {
         name: 'Cisco',
-        class: 'bg-[#04364A] text-white hover:scale-105 transition', // azul Cisco oscuro (#049FD9)
+        class: 'bg-[#04364A] text-white hover:scale-105 transition',
         icon: Cisco,
     },
     ASTRO: {
-    name: 'Astro',
-    class: 'bg-[#17072B] text-white hover:scale-105 transition', // morado muy oscuro (marca #BC52EE)
-    icon: AstroIcon,
+        name: 'Astro',
+        class: 'bg-[#17072B] text-white hover:scale-105 transition',
+        icon: AstroIcon,
     },
     TAILWIND: {
         name: 'Tailwind',
-        class: 'bg-[#0C3D4A] text-white hover:scale-105 transition', // teal oscuro (marca #06B6D4)
+        class: 'bg-[#0C3D4A] text-white hover:scale-105 transition',
         icon: Tailwind,
     },
     HTML: {
         name: 'HTML',
-        class: 'bg-[#4A1A0A] text-white hover:scale-105 transition', // naranja muy oscuro (marca #E34F26)
+        class: 'bg-[#4A1A0A] text-white hover:scale-105 transition',
         icon: HTML,
     },
     CSS: {
         name: 'CSS',
-        class: 'bg-[#0A1A4A] text-white hover:scale-105 transition', // azul muy oscuro (marca #2965F1)
+        class: 'bg-[#0A1A4A] text-white hover:scale-105 transition',
         icon: CSS,
     },
     POSTGRESQL: {
         name: 'PostgreSQL',
-        class: 'bg-[#1A3347] text-white hover:scale-105 transition', // azul grisáceo oscuro (marca #336791)
+        class: 'bg-[#1A3347] text-white hover:scale-105 transition',
         icon: PostgreSQL,
     }
 }
 
-
+// --- ESTRUCTURA ORIGINAL (Solo se agregaron los nuevos tags a las categorías existentes) ---
 const HABILITIES = [
     {
         title: 'Infraestructura & Sistemas',
-        tags: [TAGS.LINUX, TAGS.DOCKER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N],
+        tags: [TAGS.LINUX, TAGS.FEDORA, TAGS.UBUNTU, TAGS.DOCKER, TAGS.PORTAINER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N, TAGS.BASH],
     },
     {
         title: 'Redes',
-        tags: [TAGS.CISCO, TAGS.VLAN, TAGS.VLSM],
+        tags: [TAGS.CISCO, TAGS.VLAN, TAGS.VLSM, TAGS.CLOUDFLARE, TAGS.GNS3],
     },
     {
         title: 'Desarrollo',
-        tags: [TAGS.PYTHON, TAGS.FLUTTER, TAGS.DART, TAGS.NODEJS, TAGS.FIREBASE],
+        tags: [TAGS.PYTHON, TAGS.JAVA, TAGS.JS, TAGS.FASTAPI, TAGS.FLASK, TAGS.ARDUINO, TAGS.OLLAMA, TAGS.FIREBASE, TAGS.GIT],
     },
     {
         title: 'Bases de Datos',
@@ -189,22 +276,20 @@ const HABILITIES = [
     },
     {
         title: 'Web',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.HTML, TAGS.CSS],
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.HTML, TAGS.CSS, TAGS.VERCEL],
     },
 ]
 ---
+
 <div class="grid md:grid-cols-2 gap-4">
 {
     HABILITIES.map(({title, tags}) => (
-
         <article class="border border-white/10 rounded-xl p-6 bg-white/5 mb-5">
-            <h3 class="text-xl font-semibold  text-blue-600/80 mb-4">{title}</h3>
+            <h3 class="text-xl font-semibold text-blue-600/80 mb-4">{title}</h3>
             <ul class="flex gap-x-2 flex-wrap">
                 {tags.map((tag) => (
                     <li>
-                        <span 
-                        class={`flex gap-x-2 ${tag.class} rounded-full text-xs py-1 px-2 mb-2 items-center`}
-                        >
+                        <span class={`flex gap-x-2 ${tag.class} rounded-full text-xs py-1 px-2 mb-2 items-center`}>
                             {tag.icon && <tag.icon class="size-5" />}
                             {tag.name}
                         </span>

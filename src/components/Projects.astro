@@ -27,6 +27,7 @@ import Cisco from "./icons/Cisco.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import HTML from "./icons/HTML.astro"
 import CSS from "./icons/CSS.astro"
+import LibreOffice from "./icons/LibreOffice.astro"
 
 // Imagenes Importadas (Corregidas con ../)
 import Arrmar_1 from '../assets/projects/superArrmar_top.webp'
@@ -45,7 +46,6 @@ import Red_LAN_2 from '../assets/projects/Red_LAN_2.webp'
 import Red_LAN_3 from '../assets/projects/Red_LAN_3.webp'
 import InfoStock_1 from '../assets/projects/InfoStock_1.webp'
 import InfoStock_2 from '../assets/projects/InfoStock_2.webp'
-import Calculo_divisas from '../assets/projects/Calculo_divisas.webp'
 import Pi_Hole from '../assets/projects/pi-hole.webp'
 import Portainer from '../assets/projects/Portainer.webp'
 import AuxiDrive_login from '../assets/projects/AuxiDrive_login.webp'
@@ -55,8 +55,25 @@ import AuxiDrive_perfil from '../assets/projects/AuxiDrive_perfil.webp'
 import AuxiDrive_servicios from '../assets/projects/AuxiDrive_servicios.webp'
 import AuxiDrive_busqueda from '../assets/projects/AuxiDrive_busqueda.webp'
 import AuxiDrive_solicitud_servicio from '../assets/projects/AuxiDrive_solicitud_servicio.webp'
+import Javascript from './icons/Javascript.astro'
+import InPrint_1 from '../assets/projects/InPrint_1.webp'
+import InPrint_2 from '../assets/projects/InPrint_2.webp'
+import InPrint_3 from '../assets/projects/InPrint_3.webp'
+import InPrint_4 from '../assets/projects/InPrint_4.webp'
+import InPrint_5 from '../assets/projects/InPrint_5.webp'
+import InPrint_6 from '../assets/projects/InPrint_6.webp'
 
 const TAGS = {
+    LIBREOFFICE: {
+        name: 'LibreOffice',
+        class: 'bg-white/30 text-white hover:scale-105 transition',
+        icon: LibreOffice,
+    },
+    JS: {
+        name: 'Javascript',
+        class: 'bg-gray-800 text-white hover:scale-105 transition',
+        icon: Javascript,
+    },
     TAILWIND: {
         name: 'Tailwind',
         class: 'bg-[#0C3D4A] text-white hover:scale-105 transition',
@@ -187,11 +204,11 @@ const TAGS = {
 const PROJECTS = [
     {
         title: 'Pagina Web Informativa - Super Arrmar',
-        description: 'Sitio web moderno y responsivo desarrollado para una tienda de abarrotes local. Incluye catálogo de productos organizado por categorías, sección de promociones, galería fotográfica, ubicación interactiva y enlace directo a WhatsApp para consultas. Diseñado con un enfoque en la experiencia de usuario y optimizado para múltiples dispositivos y navegadores.',
-        link_repo: null, // No se mostrará el botón de repositorio
+        description: 'Sitio web informativo para tienda de abarrotes local. Catálogo de productos categorizado, promociones, mapa interactivo y atención directa por WhatsApp. Desarrollo responsivo con HTML, CSS y JavaScript.',
+        link_repo: null, 
         link_demo: 'https://super-arrmar.vercel.app/', 
         images: [Arrmar_1, Arrmar_2, Arrmar_3, Arrmar_4, Arrmar_5, Arrmar_6, Arrmar_7, Arrmar_8],
-        tags: [TAGS.TAILWIND, TAGS.HTML, TAGS.CSS],
+        tags: [TAGS.TAILWIND, TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
     {
         title: 'Pi Homelab',
@@ -200,6 +217,14 @@ const PROJECTS = [
         link_demo: null,
         images: [Pi_Hole, Portainer],
         tags: [TAGS.LINUX, TAGS.DOCKER, TAGS.RASPBERRY_PI, TAGS.PIHOLE, TAGS.NEXTCLOUD, TAGS.TAILSCALE, TAGS.N8N],
+    },
+    {
+        title: 'InPrint Bot',
+        description: 'Middleware de impresión remota para red local. Utiliza una máquina de estados en Telegram (Python) empaquetada en Docker sobre Raspberry Pi 5. Gestiona la conversión de archivos ofimáticos vía LibreOffice y despacha los trabajos directamente al host mediante CUPS.',
+        link_repo: 'https://github.com/NarcisoIn/InPrint_Bot',
+        link_demo: null,
+        images: [InPrint_1, InPrint_2, InPrint_3, InPrint_4, InPrint_5, InPrint_6],
+        tags: [TAGS.PYTHON, TAGS.TELEGRAM, TAGS.DOCKER, TAGS.LINUX, TAGS.RASPBERRY_PI, TAGS.LIBREOFFICE]
     },
     {
         title: 'AuxiDrive',
@@ -232,14 +257,6 @@ const PROJECTS = [
         link_demo: null,
         images: [InfoStock_1, InfoStock_2],
         tags: [TAGS.PYTHON, TAGS.TKINTER, TAGS.YFINANCE],
-    },
-    {
-        title: 'Simulación Monte Carlo — Divisas',
-        description: 'Estimación del comportamiento de divisas mediante el método de Montecarlo. Genera distribuciones estadísticas y visualizaciones para análisis de datos financieros.',
-        link_repo: 'https://github.com/NarcisoIn/Monte-Carlo-Stock-Price-Simulation.git',
-        link_demo: null,
-        images: [Calculo_divisas],
-        tags: [TAGS.PYTHON, TAGS.NUMPY, TAGS.MATPLOTLIB],
     }
 ]
 ---
@@ -263,7 +280,7 @@ const PROJECTS = [
                     {images.map((img, idx) => (
                         <div class="snap-start shrink-0 w-full relative">
                             <Image 
-                                class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[-500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
+                                class="rounded-lg shadow-2xl border border-white/10 object-contain w-full h-auto max-h-[280px] md:max-h-[500px] bg-black/40 cursor-zoom-in hover:opacity-95 transition"
                                 src={img} 
                                 alt={`Captura ${idx + 1} de ${title}`}
                                 loading="lazy"
@@ -273,14 +290,14 @@ const PROJECTS = [
                     ))}
                 </div>
                 {images.length > 1 && (
-                    <span class="text-xs text-gray-400 mt-2 block text-right font-mono">1 / {images.length} — Desliza o usa flechas</span>
+                    <span id={`counter-${projectIdx}`} class="text-xs text-gray-400 mt-2 block text-right font-mono" data-total={images.length}>1 / {images.length} — Desliza o usa flechas</span>
                 )}
             </div>
 
             <!-- Modal Lightbox Fullscreen -->
             <dialog 
                 id={`lightbox-${projectIdx}`} 
-                class="bg-transparent p-0 m-auto w-[-100vw] h-[-100vh] max-w-none max-h-none backdrop:bg-black/70 backdrop:backdrop-blur-md overflow-hidden"
+                class="bg-transparent p-0 m-auto w-[100vw] h-[100vh] max-w-none max-h-none backdrop:bg-black/70 backdrop:backdrop-blur-md overflow-hidden"
                 onclick={`if(event.target === this) closeLightbox('lightbox-${projectIdx}')`}
             >
                 <button 
@@ -291,10 +308,13 @@ const PROJECTS = [
                 </button>
 
                 {images.length > 1 && (
-                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[-60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❮</button>
+                    <button onclick={`scrollLightbox('lightbox-carousel-${projectIdx}', -1)`} class="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20" aria-label="Imagen anterior">❮</button>
                 )}
                 {images.length > 1 && (
-                    <button onclick={`scrollCarousel('lightbox-carousel-${projectIdx}', 1)`} class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-[-60] bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20">❯</button>
+                    <button onclick={`scrollLightbox('lightbox-carousel-${projectIdx}', 1)`} class="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/80 text-white rounded-full p-3 transition items-center justify-center w-10 h-10 md:w-12 md:h-12 shadow-lg hidden md:flex border border-white/20" aria-label="Imagen siguiente">❯</button>
+                )}
+                {images.length > 1 && (
+                    <span id={`lightbox-counter-${projectIdx}`} class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-black/50 text-white text-xs font-mono px-3 py-1.5 rounded-full border border-white/20" data-total={images.length}>1 / {images.length}</span>
                 )}
                 
                 <div 
@@ -384,6 +404,24 @@ const PROJECTS = [
             document.body.style.overflow = '';
         });
     });
+
+    // Agregar listeners de scroll a todos los carruseles (miniatura)
+    document.querySelectorAll('[id^="carousel-"]').forEach(carousel => {
+      let scrollTimeout;
+      carousel.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => updateCarouselCounter(carousel.id), 50);
+      });
+    });
+
+    // Agregar listeners de scroll a todos los carruseles del lightbox
+    document.querySelectorAll('[id^="lightbox-carousel-"]').forEach(carousel => {
+      let scrollTimeout;
+      carousel.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => updateLightboxCounter(carousel.id), 50);
+      });
+    });
   });
 
   function scrollCarousel(carouselId, direction) {
@@ -395,5 +433,56 @@ const PROJECTS = [
       left: direction * scrollAmount,
       behavior: 'smooth'
     });
+    
+    // Actualizar contador después del scroll suave
+    setTimeout(() => updateCarouselCounter(carouselId), 350);
+  }
+
+  function scrollLightbox(carouselId, direction) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    
+    const scrollAmount = container.clientWidth;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+    
+    // Actualizar contador del lightbox después del scroll suave
+    setTimeout(() => updateLightboxCounter(carouselId), 350);
+  }
+
+  function updateCarouselCounter(carouselId) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    
+    const projectIdx = carouselId.replace('carousel-', '');
+    const counterEl = document.getElementById(`counter-${projectIdx}`);
+    if (!counterEl) return;
+    
+    const total = parseInt(counterEl.dataset.total, 10);
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = container.clientWidth;
+    const currentIndex = Math.round(scrollLeft / itemWidth);
+    const clampedIndex = Math.max(0, Math.min(currentIndex, total - 1));
+    
+    counterEl.textContent = `${clampedIndex + 1} / ${total} — Desliza o usa flechas`;
+  }
+
+  function updateLightboxCounter(carouselId) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    
+    const projectIdx = carouselId.replace('lightbox-carousel-', '');
+    const counterEl = document.getElementById(`lightbox-counter-${projectIdx}`);
+    if (!counterEl) return;
+    
+    const total = parseInt(counterEl.dataset.total, 10);
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = container.clientWidth;
+    const currentIndex = Math.round(scrollLeft / itemWidth);
+    const clampedIndex = Math.max(0, Math.min(currentIndex, total - 1));
+    
+    counterEl.textContent = `${clampedIndex + 1} / ${total}`;
   }
 </script>
