@@ -9,17 +9,37 @@ interface Props {
 	description: string
 }
 
-const { description, title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Título y descripción de la página -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!-- Icono de la pagina  -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+
+		<!-- Metadastos Open Graph / Facebook / LinkedIn / WhatsApp-->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://narcisoguzman.com/" />
+		<meta property="og:title" content={`${title}`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://narcisoguzman.com/Banner.webp" />
+
+		<!-- Twitter / X -->
+	    <meta name="twitter:card" content="summary_large_image" />
+	    <meta name="twitter:url" content="https://narcisoguzman.com/" />
+	    <meta name="twitter:title" content={`${title}`} />
+	    <meta name="twitter:description" content={description} />
+	    <meta name="twitter:image" content="https://narcisoguzman.com/Banner.webp" />
+
 	</head>
 <body>
         <div class="fixed inset-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
